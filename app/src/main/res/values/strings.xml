@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">rc_cluster_network</string>
+    <string name="app_name">Network</string>
+
+    <string name="title_okhttp">OkHttp</string>
+    <string name="title_retrofit">Retrofit</string>
+    <string name="title_rxjava">RxJava</string>
+    <string name="title_integrate">Integrate</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

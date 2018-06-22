@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_okhttp"
+        android:icon="@drawable/ic_memory_black"
+        android:title="@string/title_okhttp" />
+
+    <item
+        android:id="@+id/navigation_retrofit"
+        android:icon="@drawable/ic_memory_black"
+        android:title="@string/title_retrofit" />
+
+    <item
+        android:id="@+id/navigation_rxjava"
+        android:icon="@drawable/ic_memory_black"
+        android:title="@string/title_rxjava" />
+    <item
+        android:id="@+id/navigation_integrate"
+        android:icon="@drawable/ic_memory_black"
+        android:title="@string/title_integrate" />
+
+</menu>
