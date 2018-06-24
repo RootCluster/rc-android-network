@@ -1,11 +1,13 @@
 package org.incoder.network;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import org.incoder.network.advance.IntegrateFragment;
@@ -22,7 +24,6 @@ import java.util.List;
  */
 public class MainActivity extends AppCompatActivity {
 
-    private List<Fragment> mFragments;
     private ViewPager mViewPager;
     private BottomNavigationView navigation;
 
@@ -82,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mFragments = new ArrayList<>();
+        List<Fragment> mFragments = new ArrayList<>();
         mFragments.add(new OkhttpFragment());
         mFragments.add(new RetrofitFragment());
         mFragments.add(new RxJavaFragment());
@@ -93,8 +94,25 @@ public class MainActivity extends AppCompatActivity {
         mViewPager.setOffscreenPageLimit(mFragments.size());
         mViewPager.addOnPageChangeListener(mOnPageChangeListener);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.menu_info) {
+            AboutDialogFragment dialogFragment = new AboutDialogFragment();
+            dialogFragment.show("About", "Network is learn cluster,include okhttp,retrofit,rxjava.", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            }, getFragmentManager());
+        }
+        return true;
+    }
 }
